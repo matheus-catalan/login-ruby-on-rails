@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_DB: user
+      POSTGRES_USER: matheus
+      POSTGRES_PASSWORD: matheus
+    volumes:
+      - ./db/user:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - user_network
+
+  api:
+    build:
+      context: ./api2
+      args:
+        USER_ID: ${UID:-501}
+        GROUP_ID: ${UID:-20}
+    container_name: "api" 
+    volumes:
+      - ./api2:/usr/src/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - user_network
+
+  front:
+    build:
+      context: ./front
+      args:
+        UID: ${UID:-501}
+    container_name: "front"
+    volumes:
+      - ./front:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - user_network
+
+networks:
+  user_network:
+    driver: bridge

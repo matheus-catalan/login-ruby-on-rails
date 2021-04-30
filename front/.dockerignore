@@ -1,0 +1,42 @@
+# Node modules
+node_modules
+
+# Files Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+.docker
+
+#Readme
+README.md
+
+#License
+LICENSE
+
+#npm
+npm-debug.log
+
+# The testing sqlite file
+database/*.sqlite
+
+# the file of tests
+.nyc_output
+.nycrc
+test/coverage
+
+
+#File lint
+.eslintrc.js
+.eslintignore
+.editorconfig
+.vscode
+
+#DotEnv
+.env.testing
+.env.test
+.env.example
+.env
+
+#git
+.git
+.gitignore
