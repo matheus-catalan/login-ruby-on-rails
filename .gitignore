@@ -1,4 +1,4 @@
-db
+db/
 # Node artifact files
 node_modules/
 dist/
