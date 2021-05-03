@@ -1,3 +1,4 @@
+db/
 api2/*.rbc
 api2/capybara-*.html
 api2/.rspec
