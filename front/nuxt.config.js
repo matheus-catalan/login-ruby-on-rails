@@ -23,16 +23,20 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/login', method: 'post', propertyName: 'token' },
-          user: {
-            url: '/api/auth/user',
-            method: 'get',
-            propertyName: 'user.name',
+          login: {
+            url: '/api/login',
+            method: 'post',
+            propertyName: 'token',
+            credentials: true,
           },
+          user: false,
+          logout: false,
         },
         user: {
-          property: false,
+          property: true,
+          autoFetch: true,
         },
+        autoFetchUser: true,
         redirect: {
           login: '/login',
           logout: '/login',

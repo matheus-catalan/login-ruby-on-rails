@@ -1,6 +1,9 @@
 export const getters = {
   isAuthenticated(state) {
-    return state.auth.loggedIn
+    return {
+      name: this.$auth.$storage.getLocalStorage('userName'),
+      email: this.$auth.$storage.getLocalStorage('userEmail'),
+    }
   },
 
   loggedInUser(state) {

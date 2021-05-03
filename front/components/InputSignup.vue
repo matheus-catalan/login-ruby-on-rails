@@ -147,6 +147,18 @@ export default {
             })
             .then((res) => {
               this.$auth.setUser(res.data.user)
+              this.$auth.$storage.setLocalStorage(
+                'userName',
+                res.data.user.name
+              )
+              this.$auth.$storage.setLocalStorage(
+                'userEmail',
+                res.data.user.email
+              )
+              this.$auth.$storage.setLocalStorage(
+                'userPicture',
+                res.data.user.photo
+              )
               this.$router.push('/')
             })
         } catch (err) {

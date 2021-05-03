@@ -1,59 +1,63 @@
 <template>
-  <div class="container-login">
-    <v-container fill-height fluid>
-      <v-row align="center" justify="center" col="12">
-        <v-snackbar
-          v-model="displayLoginSucces"
-          color="#011126"
-          timeout="4000"
-          top
-          right
-        >
-          <span class="white--text">Senha salva com sucesso !</span>
-
-          <template #action="{ attrs }">
-            <v-btn
-              color="white"
-              text
-              v-bind="attrs"
-              @click="displayLoginSucces = false"
+  <v-layout style="width: 100%; height: 100%; align-items: center">
+    <v-flex>
+      <div class="mt-5">
+        <v-container fill-height>
+          <v-row align="center" justify="center" col="12">
+            <v-snackbar
+              v-model="displayLoginSucces"
+              color="#011126"
+              timeout="4000"
+              top
+              right
             >
-              Fechar
-            </v-btn>
-          </template>
-        </v-snackbar>
-        <v-col cols="10">
-          <v-card elevation="3" min-height="400px" class="rounded-xl">
-            <v-card-text>
-              <v-container>
-                <v-row align="center" col="12">
-                  <v-col col="6" align="center" justify="center">
-                    <v-img :lazy-src="img" :src="img" width="450px" />
-                  </v-col>
-                  <v-col col="6" align="center" justify="center">
-                    <InputSignin
-                      v-if="signin && !forgotPassword"
-                      @isSignup="signup"
-                      @forgotPassword="_forgotPassword"
-                    />
-                    <InputSignup
-                      v-if="!signin && !forgotPassword"
-                      @isSignup="signup"
-                    />
-                    <InputForgotPassword
-                      v-if="!signin && forgotPassword"
-                      @isSignup="signup"
-                      @isCanceled="canceledForgotPassword"
-                    />
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+              <span class="white--text">Senha salva com sucesso !</span>
+
+              <template #action="{ attrs }">
+                <v-btn
+                  color="white"
+                  text
+                  v-bind="attrs"
+                  @click="displayLoginSucces = false"
+                >
+                  Fechar
+                </v-btn>
+              </template>
+            </v-snackbar>
+            <v-col cols="10">
+              <v-card elevation="3" min-height="400px" class="rounded-xl">
+                <v-card-text>
+                  <v-container>
+                    <v-row align="center" col="12">
+                      <v-col col="6" align="center" justify="center">
+                        <v-img :lazy-src="img" :src="img" width="450px" />
+                      </v-col>
+                      <v-col col="6" align="center" justify="center">
+                        <InputSignin
+                          v-if="signin && !forgotPassword"
+                          @isSignup="signup"
+                          @forgotPassword="_forgotPassword"
+                        />
+                        <InputSignup
+                          v-if="!signin && !forgotPassword"
+                          @isSignup="signup"
+                        />
+                        <InputForgotPassword
+                          v-if="!signin && forgotPassword"
+                          @isSignup="signup"
+                          @isCanceled="canceledForgotPassword"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

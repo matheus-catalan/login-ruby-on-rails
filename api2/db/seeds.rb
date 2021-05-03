@@ -1,1 +1,6 @@
 user = User.create(name: 'Matheus Catalan', email: "matheuscatalan@outlook.com", password: "1234567")
+user = User.create(name: "Terrance Aufderhar", email: "elinore.goodwin@yahoo.com", password: "1234567")
+user = User.create(name: "Conor Bechtelar",email: "damaris_rempel30@gmail.com", password: "1234567")
+user = User.create(name: "Chadrick Towne", email: "emmie.barrows@yahoo.com", password: "1234567")
+user = User.create(name: "Jon Rath III", email: "haley_willms@hotmail.com", password: "1234567")
+user = User.create(name: "Litzy Hintz", email: "anabel_erdman@gmail.com", password: "1234567")

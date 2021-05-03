@@ -7,6 +7,20 @@
     "_name": "_57062649"
   },
   {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/usr/src/app/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_ad7ae2ee"
+  },
+  {
+    "name": "users",
+    "path": "/users",
+    "component": "/usr/src/app/pages/users.vue",
+    "chunkName": "pages/users",
+    "_name": "_5a6f4530"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/usr/src/app/pages/index.vue",
