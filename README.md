@@ -97,4 +97,4 @@ To deploy this project run
 
 ## Authors
 
-- [@katherinepeterson](https://www.github.com/katherinepeterson)
+- [@MatheusCatalan](https://www.github.com/matheus-catalan)
